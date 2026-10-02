@@ -1,0 +1,97 @@
+/* Hallmark · tokens · theme: custom (vibe: "graphite letterhead, bronze struck sparingly")
+ * axes: light / classical-serif / warm (bronze)
+ */
+:root {
+  /* Paper + ink — warm paper, graphite ink pulled from the helmet mark */
+  --color-paper:      oklch(97.6% 0.006 80);
+  --color-paper-2:    oklch(94.8% 0.007 80);
+  --color-rule:       oklch(86%   0.006 80);
+  --color-rule-strong:oklch(72%   0.006 285);
+  --color-neutral:    oklch(55%   0.006 285);
+  --color-muted:      oklch(44%   0.006 285);
+  --color-ink:        oklch(25%   0.006 285);
+
+  /* Graphite tiers — the helmet's metal, top-lit */
+  --color-tier-1-top: oklch(46%   0.006 285);
+  --color-tier-1-bot: oklch(30%   0.006 285);
+  --color-tier-2-top: oklch(64%   0.006 285);
+  --color-tier-2-bot: oklch(48%   0.006 285);
+  --color-tier-3-top: oklch(86%   0.005 285);
+  --color-tier-3-bot: oklch(74%   0.006 285);
+
+  /* Bronze — the one accent */
+  --color-accent:     oklch(62%   0.105 60);
+  --color-accent-top: oklch(70%   0.095 55);
+  --color-accent-bot: oklch(47%   0.085 55);
+  --color-accent-ink: oklch(47%   0.09  55);
+  --color-focus:      oklch(47%   0.09  55);
+
+  /* Night — the graphite band */
+  --color-night:          oklch(22%   0.006 285);
+  --color-on-night:       oklch(95%   0.005 80);
+  --color-on-night-muted: oklch(74%   0.006 285);
+  --color-accent-night:   oklch(72%   0.1   60);
+  --color-focus-night:    oklch(78%   0.09  60);
+
+  /* Overlays (transparency as a modifier of named tokens) */
+  --color-paper-veil:  oklch(97.6% 0.006 80 / 0.95);
+  --color-glyph-off:   oklch(86%   0.006 285);
+  --shadow-plate:      0 10px 30px -12px oklch(22% 0.01 285 / 0.18);
+  --color-night-2:     oklch(26%   0.007 285);
+  --color-lead:        oklch(72%   0.006 285);
+  --grain-opacity:     0.045;
+
+  /* Type */
+  --font-display: "Marcellus", "Trajan Pro", "Cinzel", Georgia, serif;
+  --font-caps:    "Marcellus SC", "Marcellus", Georgia, serif;
+  --font-body:    "Montserrat", "Helvetica Neue", Arial, sans-serif;
+
+  --text-xs:  0.75rem;
+  --text-sm:  0.875rem;
+  --text-md:  1rem;
+  --text-lg:  clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --text-xl:  clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.625rem);
+  --text-h2:  clamp(2rem, 1.3rem + 2vw, 3.25rem);
+  --text-3xl: clamp(2rem, 1.1rem + 3.4vw, 4.25rem);
+  --text-display-s: clamp(2.25rem, 1.45rem + 3.4vw, 4.25rem);
+  --text-display:   clamp(2.75rem, 1rem + 7vw, 8rem);
+
+  --tracking-caps: 0.22em;
+
+  /* Space — 4pt scale */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+  --page-gutter: clamp(1rem, 0.4rem + 3vw, 3.5rem);
+  --page-max: 84rem;
+
+  /* Rules + radius */
+  --rule-hair: 1px;
+  --radius-none: 0;
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long:  420ms;
+  --dur-nav:   520ms;
+  --dur-lead:  700ms;
+  --nav-h:     4.5rem;
+
+  --z-base: 1;
+  --z-raised: 10;
+  --z-sticky: 200;
+  --z-curtain: 500;
+  --z-skip:   600;
+  --z-veil:   700;
+}

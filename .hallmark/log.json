@@ -1,0 +1,49 @@
+[
+  {
+    "date": "2026-10-02",
+    "macrostructure": "Marquee Hero → pinned horizontal plates",
+    "theme": "custom",
+    "theme_axes": "light / classical-serif / warm",
+    "vibe": "graphite letterhead, bronze struck sparingly",
+    "nav": "N10 Floating-on-scroll morph + progress hairline",
+    "footer": "Ft5 Statement (index variant)",
+    "enrichment": "Three.js record-field shader (procedural; no logo, no imagery) · opening veil · page-leave curtain · bronze measures · rail · closing pyramid (built from the base, lit tier by tier, clickable)",
+    "motion": "GSAP + ScrollTrigger · Lenis",
+    "brief": "Guardian Group hub — helmet removed, record-field hero, horizontal plates for the three sites"
+  },
+  {
+    "date": "2026-10-02",
+    "macrostructure": "Feature Stack",
+    "theme": "custom",
+    "theme_axes": "light / classical-serif / warm",
+    "vibe": "graphite letterhead, bronze struck sparingly",
+    "nav": "N10 Floating-on-scroll morph + progress hairline",
+    "footer": "Ft5 Statement (index variant)",
+    "enrichment": "brand helmet mark · Three.js bevel-lit metal shader · opening veil · page-leave curtain · leader lines · magnetic CTAs",
+    "motion": "GSAP + ScrollTrigger · Lenis",
+    "brief": "Guardian Group hub — best-work pass, copy verbatim"
+  },
+  {
+    "date": "2026-09-30",
+    "macrostructure": "Feature Stack",
+    "theme": "custom",
+    "theme_axes": "light / classical-serif / warm",
+    "vibe": "graphite letterhead, bronze struck sparingly",
+    "nav": "N10 Floating-on-scroll morph",
+    "footer": "Ft5 Statement (index variant)",
+    "enrichment": "brand helmet mark · Three.js metal-sheen shader",
+    "motion": "GSAP + ScrollTrigger · Lenis",
+    "brief": "Guardian Group hub redesign — immersive scroll, same verbatim copy"
+  },
+  {
+    "date": "2026-09-29",
+    "macrostructure": "Map / Diagram",
+    "theme": "custom",
+    "theme_axes": "light / classical-serif / warm",
+    "vibe": "graphite letterhead, bronze struck sparingly",
+    "nav": "N9 Edge-aligned minimal",
+    "footer": "Ft1 Mast-headed",
+    "enrichment": "none",
+    "brief": "The Guardian Group · corporate hub routing attorneys to Merlin, Guardian Medical Advisory, Guardian Civil Services"
+  }
+]

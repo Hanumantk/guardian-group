@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Guardian Group</title>
+  <meta name="description" content="For the litigation teams who rely on medical insight and testimony. Medical Intelligence Services — record analysis, physician reports, and expert testimony.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Montserrat:wght@400;500&display=swap">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+  <meta name="theme-color" content="#f7f5f1">
+  <script>
+    // Motion is progressive: content is complete without it.
+    (function (d) {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      d.classList.add('js');
+      if (reduce) { d.classList.add('reduced'); return; }
+      d.classList.add('motion');
+      // The opening curtain plays once per session
+      try { if (!sessionStorage.getItem('gg-seen')) d.classList.add('veiled'); } catch (e) {}
+      // If the motion scripts never arrive, fall back to the static page.
+      setTimeout(function () { if (!d.classList.contains('motion-ready')) { d.classList.remove('motion'); d.classList.remove('veiled'); } }, 3000);
+    })(document.documentElement);
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Opening curtain (first visit in a session) and the page-leave curtain -->
+  <div class="veil" data-veil aria-hidden="true">
+    <div class="veil__panel veil__panel--top" data-veil-top></div>
+    <div class="veil__panel veil__panel--bot" data-veil-bot></div>
+    <div class="veil__seam" data-veil-seam></div>
+    <svg class="veil__star" data-veil-star viewBox="0 0 40 60" width="26" height="39"><path d="M20 0 C21.5 22 23 27.5 40 30 C23 32.5 21.5 38 20 60 C18.5 38 17 32.5 0 30 C17 27.5 18.5 22 20 0Z"/></svg>
+  </div>
+  <div class="curtain" data-curtain aria-hidden="true">
+    <span class="curtain__label" data-curtain-label></span>
+  </div>
+
+  <!-- N10 · one DOM, two visual modes -->
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a class="nav__logo" href="./" aria-label="The Guardian Group — home">
+        <img src="assets/guardian-group.png" alt="Guardian Group" width="1400" height="350">
+      </a>
+      <a class="qme" href="https://www.theguardian.group" data-name="QME Services" data-magnet>QME Services <span aria-hidden="true">→</span></a>
+      <span class="nav__progress" data-progress aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero · the record: hairline rows of a transcript, restless, read into order as you scroll -->
+    <section class="hero" aria-labelledby="hero-title" data-hero>
+      <div class="hero__field" data-field-host aria-hidden="true">
+        <canvas class="hero__canvas" data-field></canvas>
+      </div>
+      <div class="hero__copy">
+        <h1 id="hero-title" class="hero__title" data-split>For the litigation teams who rely on medical insight and testimony.</h1>
+        <p class="hero__lede" data-rise>Medical Intelligence Services — record analysis, physician reports, and expert testimony.</p>
+      </div>
+      <span class="hero__cue" data-cue aria-hidden="true"></span>
+    </section>
+
+    <!-- Epigraph · a graphite band; the line lights word by word -->
+    <section class="epigraph" data-epigraph aria-label="Epigraph">
+      <div class="epigraph__ground" data-ground aria-hidden="true"></div>
+      <figure class="epigraph__inner">
+        <svg class="epigraph__star" data-star viewBox="0 0 40 60" width="28" height="42" aria-hidden="true"><path d="M20 0 C21.5 22 23 27.5 40 30 C23 32.5 21.5 38 20 60 C18.5 38 17 32.5 0 30 C17 27.5 18.5 22 20 0Z"/></svg>
+        <blockquote><p class="epigraph__quote" data-split="light">Knowledge itself is power.</p></blockquote>
+        <figcaption class="epigraph__cite" data-cite>— Francis Bacon</figcaption>
+        <span class="epigraph__rule" data-epirule aria-hidden="true"></span>
+      </figure>
+    </section>
+
+    <!-- The three · a pinned horizontal track of full-screen plates.
+         The bronze measure under each carries the brief's meaning: Merlin applies to every file,
+         Medical Advisory to the matters that need an opinion, Civil Services to the few. -->
+    <section class="plates" aria-labelledby="plates-title" data-plates>
+      <div class="plates__head">
+        <h2 id="plates-title" class="plates__title" data-split>Match the medicine to the matter.</h2>
+        <p class="plates__line" data-rise>Every case rests on the record. Few warrant a specialist. Most sit somewhere in between.</p>
+      </div>
+
+      <div class="plates__pin" data-pin>
+        <ol class="track" data-track>
+          <li class="plate plate--paper" data-plate>
+            <a class="plate__link" href="https://www.merlin.law" data-name="Merlin">
+              <div class="plate__inner" data-plate-inner>
+                <h3 class="plate__name"><img src="assets/merlin.png" alt="Merlin" width="1400" height="442"></h3>
+                <p class="plate__claim">Physician-grade command of the complete record.</p>
+                <p class="plate__detail">The whole production, read and analyzed. Not just a chronology.</p>
+                <span class="plate__cta" data-magnet>Explore Merlin <span aria-hidden="true">→</span></span>
+              </div>
+              <span class="plate__measure" data-measure style="--measure: 1" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li class="plate plate--night" data-plate>
+            <a class="plate__link" href="https://www.guardianadvisory.group" data-name="Guardian Medical Advisory">
+              <div class="plate__inner" data-plate-inner>
+                <h3 class="plate__name"><img src="assets/guardian-medical-advisory-white.png" alt="Guardian Medical Advisory" width="1099" height="293" loading="lazy"></h3>
+                <p class="plate__claim">Substantiated medicine for the cases that settle.</p>
+                <p class="plate__detail">Lower-cost generalist medical opinion on causation, future care, and other areas of dispute.</p>
+                <span class="plate__cta" data-magnet>Learn more <span aria-hidden="true">→</span></span>
+              </div>
+              <span class="plate__measure" data-measure style="--measure: 0.62" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li class="plate plate--paper-2" data-plate>
+            <a class="plate__link" href="https://www.guardiancivil.services" data-name="Guardian Civil Services">
+              <div class="plate__inner" data-plate-inner>
+                <h3 class="plate__name"><img src="assets/guardian-civil-services.png" alt="Guardian Civil Services" width="1099" height="293" loading="lazy"></h3>
+                <p class="plate__claim">Board-certified specialists who hold up under challenge.</p>
+                <p class="plate__detail">Retained experts for trial cases and independent evaluations.</p>
+                <span class="plate__cta" data-magnet>Learn more <span aria-hidden="true">→</span></span>
+              </div>
+              <span class="plate__measure" data-measure style="--measure: 0.3" aria-hidden="true"></span>
+            </a>
+          </li>
+        </ol>
+
+        <div class="rail" aria-hidden="true">
+          <span class="rail__track"><span class="rail__marker" data-marker></span></span>
+          <ol class="rail__labels">
+            <li class="rail__label is-current" data-rail>Merlin</li>
+            <li class="rail__label" data-rail>Guardian Medical Advisory</li>
+            <li class="rail__label" data-rail>Guardian Civil Services</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- The pyramid · the three as levels of one service, built from the foundation up -->
+    <section class="summit" aria-label="The three tiers" data-summit>
+      <div class="summit__pin" data-summit-pin>
+        <div class="summit__figure">
+          <svg class="pyr" viewBox="0 0 740 520" data-pyr aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="p-t1" x1="0" y1="0" x2="0" y2="1"><stop class="s-t1a" offset="0"/><stop class="s-t1b" offset="1"/></linearGradient>
+              <linearGradient id="p-t2" x1="0" y1="0" x2="0" y2="1"><stop class="s-t2a" offset="0"/><stop class="s-t2b" offset="1"/></linearGradient>
+              <linearGradient id="p-t3" x1="0" y1="0" x2="0" y2="1"><stop class="s-t3a" offset="0"/><stop class="s-t3b" offset="1"/></linearGradient>
+              <linearGradient id="p-bronze" x1="0" y1="0" x2="0" y2="1"><stop class="s-ba" offset="0"/><stop class="s-bb" offset="1"/></linearGradient>
+            </defs>
+            <a class="pyr__tier" data-tier="1" href="https://www.guardiancivil.services" data-name="Guardian Civil Services" tabindex="-1">
+              <polygon fill="url(#p-t1)" points="300,0 397.67,169.3 202.33,169.3"/>
+              <polygon class="pyr__lit" data-lit="1" fill="url(#p-bronze)" points="300,0 397.67,169.3 202.33,169.3"/>
+            </a>
+            <a class="pyr__tier" data-tier="2" href="https://www.guardianadvisory.group" data-name="Guardian Medical Advisory" tabindex="-1">
+              <polygon fill="url(#p-t2)" points="197.71,177.3 402.29,177.3 497.71,342.7 102.29,342.7"/>
+              <polygon class="pyr__lit" data-lit="2" fill="url(#p-bronze)" points="197.71,177.3 402.29,177.3 497.71,342.7 102.29,342.7"/>
+            </a>
+            <a class="pyr__tier" data-tier="3" href="https://www.merlin.law" data-name="Merlin" tabindex="-1">
+              <polygon fill="url(#p-t3)" points="97.67,350.7 502.33,350.7 600,520 0,520"/>
+              <polygon class="pyr__lit" data-lit="3" fill="url(#p-bronze)" points="97.67,350.7 502.33,350.7 600,520 0,520"/>
+            </a>
+            <g class="pyr__leads" fill="none">
+              <line class="pyr__lead" data-lead="1" x1="374" y1="110" x2="718" y2="110" pathLength="1"/><circle class="pyr__dot" data-dot="1" cx="724" cy="110" r="4"/>
+              <line class="pyr__lead" data-lead="2" x1="461" y1="260" x2="718" y2="260" pathLength="1"/><circle class="pyr__dot" data-dot="2" cx="724" cy="260" r="4"/>
+              <line class="pyr__lead" data-lead="3" x1="562" y1="435" x2="718" y2="435" pathLength="1"/><circle class="pyr__dot" data-dot="3" cx="724" cy="435" r="4"/>
+            </g>
+          </svg>
+          <ol class="summit__labels">
+            <li class="summit__label" data-label="1" style="--at: 21.2%"><a href="https://www.guardiancivil.services" data-name="Guardian Civil Services"><span class="summit__name">Guardian Civil Services</span><span class="summit__url">guardiancivil.services</span></a></li>
+            <li class="summit__label" data-label="2" style="--at: 50%"><a href="https://www.guardianadvisory.group" data-name="Guardian Medical Advisory"><span class="summit__name">Guardian Medical Advisory</span><span class="summit__url">guardianadvisory.group</span></a></li>
+            <li class="summit__label" data-label="3" style="--at: 83.7%"><a href="https://www.merlin.law" data-name="Merlin"><span class="summit__name">Merlin</span><span class="summit__url">merlin.law</span></a></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Ft5 variant: the three names are the closing statement -->
+  <footer class="foot">
+    <ul class="foot__index">
+      <li><a class="foot__row" href="https://www.merlin.law" data-name="Merlin"><span class="foot__name">Merlin</span><span class="foot__url">merlin.law</span><span class="foot__arrow" aria-hidden="true">→</span></a></li>
+      <li><a class="foot__row" href="https://www.guardianadvisory.group" data-name="Guardian Medical Advisory"><span class="foot__name">Guardian Medical Advisory</span><span class="foot__url">guardianadvisory.group</span><span class="foot__arrow" aria-hidden="true">→</span></a></li>
+      <li><a class="foot__row" href="https://www.guardiancivil.services" data-name="Guardian Civil Services"><span class="foot__name">Guardian Civil Services</span><span class="foot__url">guardiancivil.services</span><span class="foot__arrow" aria-hidden="true">→</span></a></li>
+    </ul>
+    <div class="foot__meta">
+      <img class="foot__logo" src="assets/guardian-group.png" alt="Guardian Group" width="1400" height="350" loading="lazy">
+      <a class="foot__qme" href="https://www.theguardian.group" data-name="QME Services">QME Services</a>
+      <p class="foot__legal">© 2026 The Guardian Group</p>
+    </div>
+  </footer>
+</body>
+</html>
