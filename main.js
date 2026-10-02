@@ -32,7 +32,7 @@
   /* ---------- Smooth scroll (Lenis) wired to ScrollTrigger ---------- */
   var lenis = null;
   if (window.Lenis) {
-    lenis = new window.Lenis({ lerp: 0.085, smoothWheel: true, anchors: true });
+    lenis = new window.Lenis({ lerp: 0.055, wheelMultiplier: 0.9, smoothWheel: true, anchors: true });
     lenis.on('scroll', ScrollTrigger.update);
     var tick = function (time) { lenis.raf(time * 1000); };
     gsap.ticker.add(tick);
