@@ -587,6 +587,7 @@ html.lenis, html.lenis body { height: auto; }
 .foot__row:active .foot__name { opacity: 0.8; }
 
 .foot__meta {
+  border-top: var(--rule-hair) solid var(--color-rule);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
